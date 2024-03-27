@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap Animation</title>
+</head>
+<body>
+    <h1 style="color:red">This is heading</h1>
+    <h1 style="color:green">This is heading</h1>
+    <h1 style="color:blue">This is heading</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+    gsap.to("h1",{
+        x:400, // move element 400px to x access from its initial position
+        duration:1, // set duration of animation
+        delay:1, // set the value of animation delay
+        stagger:0.5, // stagger sets differnt animation for same elements
+        repeat:1, // repeat the animation
+        yoyo:true // yoyo sets animation from start to end
+    })
+</script>  
+</body>
+</html>
