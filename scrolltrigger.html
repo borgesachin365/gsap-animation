@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap Animation</title>
+    <style>
+        #div1{
+            width: 100%;
+            height: 100vh;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #div2{
+            width: 100%;
+            height: 100vh;
+            background-color: rosybrown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #div3{
+            width: 100%;
+            height: 100vh;
+            background-color:aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div class="box"></div>
+    </div>
+    <div id="div2">
+        <div class="box"></div>
+    </div>
+    <div id="div3">
+        <div class="box"></div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.from("#div1 .box",{
+    scale:0,
+    opacity:0
+});
+gsap.from("#div2 .box",{
+    scale:0,
+    opacity:0,
+    rotate:360,
+    scrollTrigger:{
+        trigger:"#div2 .box", // this is use to trigger an element which you want to animate
+        scroller:"body", 
+        markers:true, // markers are helpful for set animation start and end point
+        start:"top 50%", // start position of markers
+        end:"top 30%", // end position of markers
+        scrub:2 // Scrub is very useful property for make animation 
+    }
+});
+
+</script>  
+</body>
+</html>
